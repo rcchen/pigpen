@@ -1,4 +1,4 @@
-== Pigpen
+## Pigpen
 
 Pigpen is a self-hosted Git solution built on Rails
 
