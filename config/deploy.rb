@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:rcchen/pigpen.git'
 set :deploy_to, '/var/www/pigpen'
 
 # Default value for :linked_files is []
-set :linked_files, %w{puma.rb}
+set :linked_files, %w{puma.rb config/secrets.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{tmp/pids tmp/sockets log}
