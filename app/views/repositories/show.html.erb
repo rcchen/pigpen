@@ -1,0 +1,10 @@
+<h3>Branches</h3>
+<% @repo.branches.each do |branch| %>
+  <% if branch.target.type == :commit %>
+    <li><%= branch.name %> (<%= branch.target.message %>)</li>
+  <% end %>
+<% end %>
+
+<h3>Commit</h3>
+<p><%= @root.target.message %> - <%= @root.target.committer[:name] %> (<%= @root.target.committer[:email] %>)</p>
+<%= render "shared/files" %>

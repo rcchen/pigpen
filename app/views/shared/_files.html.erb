@@ -1,0 +1,18 @@
+<table class="table table-condensed">
+<% @root.each_tree do |e| %>
+  <tr>
+    <td><i class="fa fa-folder-o"></i></td>
+    <td><%= e[:name] %></td>
+    <td><%= e[:oid] %></td>
+    <td></td>
+  </tr>
+<% end %>
+<% @root.each_blob do |e| %>
+  <tr>
+    <td><i class="fa fa-file-text-o"></i></td>
+    <td><%= e[:name] %></td>
+    <td><%= e[:oid] %></td>
+    <td><%= number_to_human_size(@repo.read(e[:oid]).len) %></td>
+  </tr>
+<% end %>
+</table>
