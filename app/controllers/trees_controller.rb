@@ -8,7 +8,7 @@ class TreesController < ApplicationController
     path_components = @path.nil? ? Array.new : @path.split("/")
     @repo = Rugged::Repository.new("/opt/git/#{@username}/#{@repository}.git")
     @base_path = "/#{@username}/#{@repository}"
-    @root = @repo.references["refs/heads/#{@branch}"].target.tree
+    @root = @repo.branches["origin/#{@branch}"].target.tree
     num_components = path_components.count
     while (path_components.count > 0)
       @root.each_tree do |e|

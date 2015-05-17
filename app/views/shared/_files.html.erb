@@ -1,8 +1,9 @@
+<h3>/<%= @path %> on <%= @branch %></h3>
 <table class="table table-condensed">
 <% @root.each_tree do |e| %>
   <tr>
     <td><i class="fa fa-folder-o"></i></td>
-    <td><a href="/<%= @username %>/<%= @repository %><%= defined?(@branch) ? "/trees/#{@branch}/" : "/trees/master/" %><%= defined?(@path) ? "#{@path}/" : "" %><%= e[:name] %>">
+    <td><a href="/<%= @username %>/<%= @repository %><%= defined?(@branch) ? "/trees/#{@branch}/" : "/trees/master/" %><%= @path.nil? ? "" : "#{@path}/" %><%= e[:name] %>">
       <%= e[:name] %>
     </a></td>
     <td><%= e[:oid] %></td>
