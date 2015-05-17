@@ -11,10 +11,11 @@ class RepositoriesController < ApplicationController
   end
 
   def show
-    username = params[:username]
-    repository = params[:repository]
-    @repo = Rugged::Repository.new("/opt/git/#{username}/#{repository}.git")
-    @root = repo.references["refs/heads/master"].target
+    @username = params[:username]
+    @repository = params[:repository]
+    @repo = Rugged::Repository.new("/opt/git/#{@username}/#{@repository}.git")
+    @commit = @repo.references["refs/heads/master"].target
+    @root = @commit.tree
   end
 
 end

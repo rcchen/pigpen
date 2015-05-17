@@ -6,5 +6,5 @@
 <% end %>
 
 <h3>Commit</h3>
-<p><%= @root.target.message %> - <%= @root.target.committer[:name] %> (<%= @root.target.committer[:email] %>)</p>
+<p><%= @commit.message %> - <%= @commit.committer[:name] %> (<%= @commit.committer[:email] %>)</p>
 <%= render "shared/files" %>
