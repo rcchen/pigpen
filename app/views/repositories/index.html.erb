@@ -1,0 +1,4 @@
+<h3>Repositories</h3>
+<% @repositories.each do |repository| %>
+  <li><a href="/<%= @username %>/<%= repository %>"><%= repository %></a></li>
+<% end %>

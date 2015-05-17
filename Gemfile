@@ -48,6 +48,7 @@ source 'https://rubygems.org' do
     gem 'capistrano-rvm'
     gem 'capistrano3-nginx'
     gem 'capistrano3-puma'
+    gem 'dotenv-rails'
     gem 'highline'
   end
 
